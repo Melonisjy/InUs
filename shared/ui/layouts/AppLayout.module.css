@@ -1,0 +1,39 @@
+/**
+ * AppLayout 스타일
+ * 
+ * 모바일 웹앱 기준 레이아웃 스타일.
+ * 디자인은 나중에 추가되며, 여기서는 구조만 정의.
+ */
+
+.appLayout {
+  /* 모바일 화면 전체 사용 */
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  
+  /* 중앙 정렬 (PC 대응) */
+  margin: 0 auto;
+  
+  /* 모바일 최대 너비 (필요시 조정) */
+  max-width: 100%;
+  
+  /* 배경과 기본 위치 */
+  position: relative;
+  background-color: #fff;
+  
+  /* 세로 스크롤 기본 */
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+  /* iOS safe area 고려 */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* PC에서도 깨지지 않는 최소 대응 (선택사항) */
+@media (min-width: 768px) {
+  .appLayout {
+    max-width: 428px; /* iPhone 14 Pro Max 기준 */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+}

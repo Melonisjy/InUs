@@ -1,0 +1,26 @@
+/**
+ * Screen 스타일
+ * 
+ * 화면 콘텐츠 영역의 기본 스타일.
+ * 디자인은 나중에 추가되며, 여기서는 구조만 정의.
+ */
+
+.screen {
+  /* 화면 전체 높이 사용 */
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  
+  /* 기본 패딩 (필요시 페이지별로 오버라이드) */
+  padding: 0;
+  
+  /* 세로 스크롤 가능 */
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+  /* 위치 설정 */
+  position: relative;
+  
+  /* 페이지 전환 애니메이션을 위한 준비 */
+  /* transform, opacity 등은 나중에 추가 */
+}

@@ -5,6 +5,12 @@
  * 첫 경험을 제공하는 페이지.
  */
 
+import { Screen } from '@/shared/ui/layouts'
+
 export default function HomePage() {
-  return <>home</>
+  return (
+    <Screen>
+      home
+    </Screen>
+  )
 }

@@ -6,6 +6,12 @@
  * 반복 가능한 흐름의 마무리 지점.
  */
 
+import { Screen } from '@/shared/ui/layouts'
+
 export default function ResponsePage() {
-  return <>response</>
+  return (
+    <Screen>
+      response
+    </Screen>
+  )
 }

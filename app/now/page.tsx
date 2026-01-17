@@ -6,6 +6,12 @@
  * 선택 후 랜덤으로 '지금 넘기기' 기능이 제공됨.
  */
 
+import { Screen } from '@/shared/ui/layouts'
+
 export default function NowPage() {
-  return <>now</>
+  return (
+    <Screen>
+      now
+    </Screen>
+  )
 }

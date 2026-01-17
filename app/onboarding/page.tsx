@@ -5,6 +5,12 @@
  * 사용자를 서비스의 흐름으로 자연스럽게 안내.
  */
 
+import { Screen } from '@/shared/ui/layouts'
+
 export default function OnboardingPage() {
-  return <>onboarding</>
+  return (
+    <Screen>
+      onboarding
+    </Screen>
+  )
 }
