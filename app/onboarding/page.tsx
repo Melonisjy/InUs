@@ -26,11 +26,11 @@ export default function OnboardingPage() {
     <Screen>
       <div className={styles.container}>
         <p className={styles.text}>지금 혼자 버티고 있나요?</p>
-        {showButton && (
-          <button className={styles.button}>
-            네, 조금 버거워요
-          </button>
-        )}
+        <button 
+          className={`${styles.button} ${showButton ? styles.visible : styles.hidden}`}
+        >
+          네, 조금 버거워요
+        </button>
       </div>
     </Screen>
   )

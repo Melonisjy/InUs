@@ -11,20 +11,23 @@
   min-height: 100vh;
   min-height: 100dvh;
   
-  /* 중앙 정렬 (세로 방향) */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  
-  /* 충분한 여백 - 요소 사이 간격 */
-  gap: 48px;
+  /* 위치 설정 */
+  position: relative;
   
   /* 좌우 여백 */
   padding: 0 32px;
+}
+
+/* 텍스트를 화면 중앙에 고정 */
+.text {
+  /* 절대 위치로 화면 중앙에 고정 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   
-  /* 위치 설정 */
-  position: relative;
+  /* 텍스트가 버튼에 가려지지 않도록 */
+  z-index: 1;
 }
 
 .text {
@@ -69,8 +72,11 @@
   /* 커서 */
   cursor: pointer;
   
-  /* 느리고 자연스러운 애니메이션 */
-  animation: fadeIn 1.8s ease-out;
+  /* 텍스트 아래에 배치 */
+  position: absolute;
+  top: calc(50% + 48px);
+  left: 50%;
+  transform: translate(-50%, 0);
   
   /* 터치 피드백 최소화 */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
@@ -86,7 +92,21 @@
   letter-spacing: -0.01em;
   
   /* 호버 시 미세한 변화만 (선택사항) */
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, opacity 1.8s ease-out, transform 1.8s ease-out;
+}
+
+/* 버튼이 보일 때 */
+.button.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+/* 버튼이 숨겨져 있을 때 */
+.button.hidden {
+  opacity: 0;
+  transform: translate(-50%, 4px);
+  pointer-events: none;
 }
 
 .button:hover {
@@ -94,14 +114,3 @@
   color: #3a3a3a;
 }
 
-/* 호흡처럼 자연스러운 fade-in */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
