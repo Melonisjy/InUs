@@ -6,11 +6,12 @@
  */
 
 import { Screen } from '@/shared/ui/layouts'
+import OnboardingPage from './onboarding/page'
 
 export default function HomePage() {
   return (
     <Screen>
-      home
+      <OnboardingPage />
     </Screen>
   )
 }

@@ -6,11 +6,14 @@
  */
 
 import { Screen } from '@/shared/ui/layouts'
+import styles from './OnboardingPage.module.css'
 
 export default function OnboardingPage() {
   return (
     <Screen>
-      onboarding
+      <div className={styles.container}>
+        <p className={styles.text}>지금 혼자 버티고 있나요?</p>
+      </div>
     </Screen>
   )
 }

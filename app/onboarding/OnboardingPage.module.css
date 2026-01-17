@@ -1,0 +1,35 @@
+/**
+ * 온보딩 페이지 스타일
+ * 
+ * "지금 혼자 버티고 있나요?" 텍스트를 화면 중앙에 배치.
+ * 조용하고 미니멀한 톤 유지.
+ */
+
+.container {
+  /* 화면 전체 높이 사용 */
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  
+  /* 중앙 정렬 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* 패딩 (좌우 여백) */
+  padding: 0 24px;
+  
+  /* 위치 설정 */
+  position: relative;
+}
+
+.text {
+  /* 텍스트 스타일 */
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000;
+  text-align: center;
+  
+  /* 조용한 느낌을 위한 여백 */
+  margin: 0;
+}
