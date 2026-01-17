@@ -11,10 +11,12 @@
   min-height: 100vh;
   min-height: 100dvh;
   
-  /* 중앙 정렬 */
+  /* 중앙 정렬 (세로 방향) */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 32px;
   
   /* 패딩 (좌우 여백) */
   padding: 0 24px;
@@ -32,4 +34,49 @@
   
   /* 조용한 느낌을 위한 여백 */
   margin: 0;
+}
+
+.button {
+  /* 버튼 기본 스타일 */
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 0;
+  
+  /* 모바일 터치 영역 */
+  min-height: 44px;
+  min-width: 120px;
+  padding: 12px 24px;
+  
+  /* 중앙 정렬 */
+  text-align: center;
+  
+  /* 커서 */
+  cursor: pointer;
+  
+  /* 애니메이션 */
+  animation: fadeIn 0.5s ease-in-out;
+  
+  /* 터치 피드백 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  touch-action: manipulation;
+  
+  /* 기본 스타일 제거 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Fade-in 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
