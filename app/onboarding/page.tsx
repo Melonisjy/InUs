@@ -28,7 +28,7 @@ export default function OnboardingPage() {
         <p className={styles.text}>지금 혼자 버티고 있나요?</p>
         {showButton && (
           <button className={styles.button}>
-            조금 버거워요
+            네, 조금 버거워요
           </button>
         )}
       </div>
