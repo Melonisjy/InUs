@@ -22,7 +22,7 @@
 .text {
   /* 절대 위치로 화면 중앙에 고정 */
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   
