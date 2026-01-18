@@ -1,10 +1,3 @@
-/**
- * 온보딩 페이지
- * 
- * "지금 혼자 버티고 있나요?"라는 질문으로 시작하는 첫 경험.
- * 사용자를 서비스의 흐름으로 자연스럽게 안내.
- */
-
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -13,19 +6,33 @@ import styles from './OnboardingPage.module.css'
 
 export default function OnboardingPage() {
   const [showButton, setShowButton] = useState(false)
+  const [displayedText, setDisplayedText] = useState('')
+  
+  const fullText = '지금 혼자 버티고 있나요?'
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowButton(true)
-    }, 1000)
+    let currentIndex = 0
+    
+    const typingInterval = setInterval(() => {
+      if (currentIndex < fullText.length) {
+        setDisplayedText(fullText.slice(0, currentIndex + 1))
+        currentIndex++
+      } else {
+        clearInterval(typingInterval)
+        // 텍스트 애니메이션 완료 후 버튼 표시
+        setTimeout(() => {
+          setShowButton(true)
+        }, 500) // 0.5초 딜레이 후 버튼 표시
+      }
+    }, 100) // 100ms 간격으로 한 글자씩
 
-    return () => clearTimeout(timer)
+    return () => clearInterval(typingInterval)
   }, [])
 
   return (
     <Screen>
       <div className={styles.container}>
-        <p className={styles.text}>지금 혼자 버티고 있나요?</p>
+        <p className={styles.text}>{displayedText}</p>
         <button 
           className={`${styles.button} ${showButton ? styles.visible : styles.hidden}`}
         >
