@@ -1,17 +1,20 @@
 /**
- * 지금 페이지
+ * 지금 페이지 (인덱스)
  * 
- * 사용자가 현재 상태를 선언하는 공간.
- * "조금 버거워요"와 같은 상태 선택이 이루어지는 곳.
- * 선택 후 랜덤으로 '지금 넘기기' 기능이 제공됨.
+ * /now 경로 직접 접근 시 랜덤으로 서브 페이지로 리다이렉트.
+ * 실제 컨텐츠는 breathing, grounding, affirmation 서브 페이지에서 제공.
  */
 
-import { Screen } from '@/shared/ui/layouts'
+import { redirect } from 'next/navigation'
+
+const NOW_PAGES = [
+  '/now/breathing',
+  '/now/grounding',
+  '/now/affirmation'
+] as const
 
 export default function NowPage() {
-  return (
-    <Screen>
-      now
-    </Screen>
-  )
+  // 랜덤으로 서브 페이지로 리다이렉트
+  const randomPage = NOW_PAGES[Math.floor(Math.random() * NOW_PAGES.length)]
+  redirect(randomPage)
 }
