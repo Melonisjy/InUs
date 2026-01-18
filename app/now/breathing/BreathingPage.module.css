@@ -11,20 +11,14 @@
   flex-direction: column;
   height: 100%;
   
-  /* 우주 배경 */
-  background: linear-gradient(
-    180deg,
-    #0a0a1a 0%,
-    #0d1033 30%,
-    #1a1a4e 60%,
-    #0d1033 100%
-  );
+  /* 검정 배경 */
+  background: #000000;
   color: #ffffff;
   overflow: hidden;
   position: relative;
 }
 
-/* 별 효과 */
+/* 흰색 별 효과 */
 .breathingScreen::before {
   content: '';
   position: absolute;
@@ -33,26 +27,26 @@
   right: 0;
   bottom: 0;
   background-image: 
-    radial-gradient(1px 1px at 20px 30px, white, transparent),
-    radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(1px 1px at 90px 40px, white, transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.7), transparent),
-    radial-gradient(1px 1px at 160px 120px, white, transparent),
-    radial-gradient(1.5px 1.5px at 200px 50px, rgba(255, 255, 255, 0.9), transparent),
-    radial-gradient(1px 1px at 220px 150px, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(1px 1px at 250px 90px, white, transparent),
-    radial-gradient(1px 1px at 280px 200px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1.5px 1.5px at 320px 70px, white, transparent),
-    radial-gradient(1px 1px at 350px 180px, rgba(255, 255, 255, 0.7), transparent),
-    radial-gradient(1px 1px at 100px 250px, white, transparent),
-    radial-gradient(1px 1px at 180px 300px, rgba(255, 255, 255, 0.6), transparent),
-    radial-gradient(1.5px 1.5px at 60px 350px, rgba(255, 255, 255, 0.9), transparent),
-    radial-gradient(1px 1px at 300px 280px, white, transparent),
-    radial-gradient(1px 1px at 240px 400px, rgba(255, 255, 255, 0.7), transparent),
-    radial-gradient(1px 1px at 150px 450px, white, transparent),
-    radial-gradient(1px 1px at 80px 500px, rgba(255, 255, 255, 0.8), transparent),
-    radial-gradient(1.5px 1.5px at 320px 380px, white, transparent);
+    radial-gradient(1px 1px at 20px 30px, #ffffff, transparent),
+    radial-gradient(1px 1px at 40px 70px, #ffffff, transparent),
+    radial-gradient(1px 1px at 50px 160px, #ffffff, transparent),
+    radial-gradient(1px 1px at 90px 40px, #ffffff, transparent),
+    radial-gradient(1px 1px at 130px 80px, #ffffff, transparent),
+    radial-gradient(1px 1px at 160px 120px, #ffffff, transparent),
+    radial-gradient(1.5px 1.5px at 200px 50px, #ffffff, transparent),
+    radial-gradient(1px 1px at 220px 150px, #ffffff, transparent),
+    radial-gradient(1px 1px at 250px 90px, #ffffff, transparent),
+    radial-gradient(1px 1px at 280px 200px, #ffffff, transparent),
+    radial-gradient(1.5px 1.5px at 320px 70px, #ffffff, transparent),
+    radial-gradient(1px 1px at 350px 180px, #ffffff, transparent),
+    radial-gradient(1px 1px at 100px 250px, #ffffff, transparent),
+    radial-gradient(1px 1px at 180px 300px, #ffffff, transparent),
+    radial-gradient(1.5px 1.5px at 60px 350px, #ffffff, transparent),
+    radial-gradient(1px 1px at 300px 280px, #ffffff, transparent),
+    radial-gradient(1px 1px at 240px 400px, #ffffff, transparent),
+    radial-gradient(1px 1px at 150px 450px, #ffffff, transparent),
+    radial-gradient(1px 1px at 80px 500px, #ffffff, transparent),
+    radial-gradient(1.5px 1.5px at 320px 380px, #ffffff, transparent);
   pointer-events: none;
 }
 
@@ -67,7 +61,7 @@
 .guideText {
   text-align: center;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.9);
 }
