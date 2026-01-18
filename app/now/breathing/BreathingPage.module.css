@@ -1,0 +1,93 @@
+/**
+ * 호흡 페이지 스타일
+ * 
+ * 모바일 전체 화면을 사용하는 레이아웃.
+ * 상단(안내) - 중앙(애니메이션) - 하단(여백) 구조.
+ * 우주 느낌의 배경.
+ */
+
+.breathingScreen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+  /* 우주 배경 */
+  background: linear-gradient(
+    180deg,
+    #0a0a1a 0%,
+    #0d1033 30%,
+    #1a1a4e 60%,
+    #0d1033 100%
+  );
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 별 효과 */
+.breathingScreen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, white, transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, white, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 160px 120px, white, transparent),
+    radial-gradient(1.5px 1.5px at 200px 50px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 220px 150px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 250px 90px, white, transparent),
+    radial-gradient(1px 1px at 280px 200px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 320px 70px, white, transparent),
+    radial-gradient(1px 1px at 350px 180px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 100px 250px, white, transparent),
+    radial-gradient(1px 1px at 180px 300px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1.5px 1.5px at 60px 350px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 300px 280px, white, transparent),
+    radial-gradient(1px 1px at 240px 400px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 150px 450px, white, transparent),
+    radial-gradient(1px 1px at 80px 500px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 320px 380px, white, transparent);
+  pointer-events: none;
+}
+
+/* 상단: 안내 문구 영역 */
+.header {
+  flex-shrink: 0;
+  padding-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.guideText {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 중앙: 애니메이션 영역 */
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.animationContainer {
+  /* 애니메이션이 들어갈 빈 컨테이너 */
+}
+
+/* 하단: 여백 */
+.footer {
+  flex-shrink: 0;
+  height: 100px;
+}

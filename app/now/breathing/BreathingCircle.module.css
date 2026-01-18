@@ -1,0 +1,64 @@
+/**
+ * BreathingCircle 스타일
+ * 
+ * 경로:
+ * - inhale: 왼쪽 → 오른쪽 위 (대각선 상승)
+ * - hold: 오른쪽 위 → 오른쪽 (수평 이동)
+ * - exhale: 오른쪽 → 오른쪽 아래 (대각선 하강) → 왼쪽으로 리셋
+ * 
+ * transform만 사용하여 GPU 가속 및 부드러운 전환 보장
+ */
+
+.container {
+  position: relative;
+  width: 280px;
+  height: 160px;
+}
+
+.circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #a0c4ff);
+  box-shadow: 
+    0 0 20px rgba(160, 196, 255, 0.6),
+    0 0 40px rgba(160, 196, 255, 0.3);
+  
+  /* 왼쪽 중앙 기준점 설정 */
+  left: 0;
+  top: 50%;
+  margin-top: -10px;
+  
+  /* 부드러운 easing - 호흡을 방해하지 않는 속도 */
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+}
+
+/* 
+ * 좌표계 (왼쪽 중앙 기준):
+ * - 시작(왼쪽): (0, 0)
+ * - 오른쪽 위: (130px, -60px)
+ * - 오른쪽: (260px, 0)
+ * - 오른쪽 아래: (130px, 60px) → 다시 왼쪽(0, 0)으로
+ */
+
+/* 시작 위치: 왼쪽 */
+.start {
+  transform: translate(0, 0);
+}
+
+/* inhale 완료 위치: 오른쪽 위 */
+.inhale {
+  transform: translate(130px, -60px);
+}
+
+/* hold 완료 위치: 오른쪽 */
+.hold {
+  transform: translate(260px, 0);
+}
+
+/* exhale 완료 위치: 왼쪽 (시작점) */
+.exhale {
+  transform: translate(0, 0);
+}
